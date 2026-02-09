@@ -23,6 +23,10 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${inter.variable} ${montserrat.variable}`}>
       <head>
+        {/* Google Search Console Verification */}
+        {process.env.NEXT_PUBLIC_GSC_VERIFICATION && (
+          <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GSC_VERIFICATION} />
+        )}
         {/* Organization Schema */}
         <script
           type="application/ld+json"
