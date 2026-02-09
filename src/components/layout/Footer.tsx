@@ -36,19 +36,15 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Şirket Bilgileri */}
           <div>
-            <div className="mb-4 flex items-center gap-2 sm:gap-3">
+            <Link href="/" className="mb-4 inline-block group">
               <Image
-                src="/logo.svg"
+                src="/esguvenirlogo.png"
                 alt="ESGÜVENİR İnşaat Logo"
-                width={48}
-                height={48}
-                className="h-10 w-auto sm:h-12"
+                width={220}
+                height={66}
+                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
               />
-              <div className="flex flex-col">
-                <span className="text-base font-bold leading-tight sm:text-lg">ESGÜVENİR</span>
-                <span className="text-xs text-neutral-light sm:text-sm">İnşaat - Emlak</span>
-              </div>
-            </div>
+            </Link>
             <p className="mb-4 text-sm leading-relaxed text-neutral-light">
               Tekirdağ Kapaklı'da 50+ proje ve 500+ konut tecrübesiyle güvenilir inşaat ve emlak
               hizmetleri.

@@ -69,13 +69,13 @@ export default function Header() {
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
             <Image
-              src="/logo.svg"
+              src="/esguvenirlogo.png"
               alt="ESGÜVENİR İnşaat Logo"
-              width={48}
-              height={48}
-              className="h-10 w-auto sm:h-12"
+              width={200}
+              height={60}
+              className="h-10 w-auto sm:h-12 object-contain transition-transform duration-300 group-hover:scale-105"
               priority
             />
             <div className="flex flex-col">
