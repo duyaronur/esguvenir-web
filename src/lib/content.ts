@@ -117,20 +117,20 @@ export function getBlogCategories(): string[] {
   return Array.from(new Set(categories));
 }
 
-export function extractHeadings(content: string): Array<{ id: string; text: string; level: number }> {
+export function extractHeadings(content: string): Array<{ id: string; title: string; level: number }> {
   const headingRegex = /^(#{2,3})\s+(.+)$/gm;
-  const headings: Array<{ id: string; text: string; level: number }> = [];
+  const headings: Array<{ id: string; title: string; level: number }> = [];
   
   let match;
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length;
-    const text = match[2];
-    const id = text
+    const title = match[2];
+    const id = title
       .toLowerCase()
       .replace(/[^\w\s-]/g, '')
       .replace(/\s+/g, '-');
     
-    headings.push({ id, text, level });
+    headings.push({ id, title, level });
   }
   
   return headings;

@@ -11,7 +11,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const statusLabels = {
     tamamlandi: "Tamamlandı",
     "devam-ediyor": "Devam Ediyor",
-    planlama: "Planlama",
+    planlaniyor: "Planlama",
   };
 
   const typeLabels = {
@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const statusColors = {
     tamamlandi: "badge-success",
     "devam-ediyor": "badge-warning",
-    planlama: "badge-info",
+    planlaniyor: "badge-info",
   };
 
   return (

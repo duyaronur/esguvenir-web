@@ -95,7 +95,7 @@ export default function Header() {
                   {item.name}
                   {"submenu" in item && <ChevronDown className="h-4 w-4" />}
                 </Link>
-                {"submenu" in item && (
+                {"submenu" in item && item.submenu && (
                   <div className="absolute left-0 top-full hidden w-56 rounded-lg border border-neutral-light bg-white py-2 shadow-lg group-hover:block">
                     {item.submenu.map((subitem) => (
                       <Link
@@ -144,7 +144,7 @@ export default function Header() {
                   >
                     {item.name}
                   </Link>
-                  {"submenu" in item && (
+                  {"submenu" in item && item.submenu && (
                     <div className="ml-4 mt-2 flex flex-col gap-2">
                       {item.submenu.map((subitem) => (
                         <Link

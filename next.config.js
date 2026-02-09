@@ -19,7 +19,8 @@ const nextConfig = {
   },
   // Performans optimizasyonları
   reactStrictMode: true,
-  swcMinify: true,
+  // Turbopack config for Next.js 16+
+  turbopack: {},
 };
 
 module.exports = withMDX(nextConfig);
