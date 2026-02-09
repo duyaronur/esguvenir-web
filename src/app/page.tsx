@@ -89,7 +89,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Öne Çıkan Projeler */}
+      {/* Öne Çıkan Projeler - Geçici olarak gizlendi
       <section className="section bg-gradient-to-b from-neutral-lightest to-white">
         <div className="container-custom">
           <div className="mb-12 flex items-end justify-between animate-fade-in-up">
@@ -117,6 +117,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Blog */}
       <section className="section">
