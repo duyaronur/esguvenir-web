@@ -141,6 +141,7 @@ export default function Footer() {
                   <span>{SITE_CONFIG.contact.phone2}</span>
                 </a>
               </li>
+              {/* Email geçici olarak gizlendi
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
@@ -150,6 +151,7 @@ export default function Footer() {
                   <span>{SITE_CONFIG.contact.email}</span>
                 </a>
               </li>
+              */}
               <li className="flex items-start gap-2 text-sm text-neutral-light">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 <span>{SITE_CONFIG.contact.address.city}, {SITE_CONFIG.contact.address.region}</span>
@@ -163,9 +165,23 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-custom py-6">
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-neutral-light md:flex-row">
-            <p>
-              © {currentYear} {SITE_CONFIG.name}. Tüm hakları saklıdır.
-            </p>
+            <div className="flex flex-col items-center gap-2 md:items-start">
+              <p>
+                © {currentYear} {SITE_CONFIG.name}. Tüm hakları saklıdır.
+              </p>
+              <p className="text-xs text-neutral-light/70">
+                Bu web sitesi{" "}
+                <a
+                  href="https://enke7.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline"
+                >
+                  ENKE7
+                </a>
+                {" "}tarafından yapılmıştır.
+              </p>
+            </div>
             <div className="flex gap-4">
               {legal.map((link) => (
                 <Link
