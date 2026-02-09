@@ -30,6 +30,25 @@ npm run build
 npm start
 ```
 
+## 🐳 Coolify Deployment
+
+Bu proje Coolify üzerinden otomatik deploy edilebilir.
+
+### Coolify Ayarları
+1. **Repository**: `https://github.com/duyaronur/esguvenir-web`
+2. **Branch**: `main`
+3. **Build Command**: `npm install && npm run build`
+4. **Start Command**: `npm start`
+5. **Port**: `3000`
+
+### Environment Variables
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+### Dockerfile (Opsiyonel)
+Coolify otomatik build kullanacak, ancak custom Dockerfile gerekirse proje kök dizinine ekleyebilirsiniz.
+
 ## 📁 Proje Yapısı
 
 ```
