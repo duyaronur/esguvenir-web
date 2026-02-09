@@ -12,7 +12,7 @@ export default function Footer() {
     { name: "Hizmetlerimiz", href: "/hizmetler" },
     { name: "Projelerimiz", href: "/projeler" },
     { name: "Blog", href: "/blog" },
-    { name: "SSS", href: "/sss" },
+    // { name: "SSS", href: "/sss" }, // Geçici olarak gizlendi
     { name: "İletişim", href: "/iletisim" },
   ];
 

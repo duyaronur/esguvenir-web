@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/hizmetler/tadilat-yenileme",
     "/projeler",
     "/blog",
-    "/sss",
+    // "/sss", // Geçici olarak gizlendi
     "/iletisim",
     "/kvkk",
     "/gizlilik",
