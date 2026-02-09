@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-neutral-darkest antialiased;
+  }
+
+  /* Heading Stilleri */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold text-primary;
+  }
+
+  h1 {
+    @apply text-4xl leading-tight md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl leading-snug md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl leading-snug md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl leading-normal md:text-2xl;
+  }
+
+  /* Link Stilleri */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Focus Stilleri (A11y) */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2;
+  }
+}
+
+@layer components {
+  /* Button Stilleri */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark focus-visible:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white focus-visible:ring-primary;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-dark focus-visible:ring-accent;
+  }
+
+  .btn-whatsapp {
+    @apply bg-green-600 text-white hover:bg-green-700 focus-visible:ring-green-600;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-xl border border-neutral-light bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md;
+  }
+
+  /* Section Spacing */
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Prose (Blog içeriği için) */
+  .prose-custom {
+    @apply prose prose-lg prose-neutral mx-auto max-w-none;
+  }
+
+  .prose-custom h2 {
+    @apply mb-4 mt-8 scroll-mt-20 border-b border-neutral-light pb-2 text-3xl font-semibold text-primary;
+  }
+
+  .prose-custom h3 {
+    @apply mb-3 mt-6 scroll-mt-20 text-2xl font-semibold text-primary;
+  }
+
+  .prose-custom p {
+    @apply mb-4 leading-relaxed text-neutral-darkest;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    @apply my-4 space-y-2 pl-6;
+  }
+
+  .prose-custom li {
+    @apply leading-relaxed;
+  }
+
+  .prose-custom a {
+    @apply text-primary underline decoration-accent decoration-2 underline-offset-2 hover:text-accent;
+  }
+
+  .prose-custom strong {
+    @apply font-semibold text-primary;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-accent bg-neutral-lightest py-3 pl-4 pr-4 italic text-neutral-darkest;
+  }
+}
+
+@layer utilities {
+  /* Custom Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary to-primary-dark;
+  }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-br from-accent to-accent-dark;
+  }
+
+  /* Animasyonlar */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Skip to main content (A11y) */
+.skip-to-main {
+  @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:ring-2 focus:ring-accent;
+}
