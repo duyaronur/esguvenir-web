@@ -71,7 +71,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="ESGÜVENİR İnşaat Logo"
               width={48}
               height={48}

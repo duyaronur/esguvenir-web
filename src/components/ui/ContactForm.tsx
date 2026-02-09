@@ -61,11 +61,11 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up">
       {/* Ad Soyad */}
-      <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-neutral-darkest">
-          Ad Soyad <span className="text-red-600">*</span>
+      <div className="form-control">
+        <label htmlFor="name" className="label">
+          <span className="label-text font-medium">Ad Soyad <span className="text-error">*</span></span>
         </label>
         <input
           type="text"
@@ -74,15 +74,15 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full rounded-lg border border-neutral-light px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20"
+          className="input input-bordered input-lg w-full focus:input-primary"
           placeholder="Adınız ve soyadınız"
         />
       </div>
 
       {/* Telefon */}
-      <div>
-        <label htmlFor="phone" className="mb-2 block text-sm font-medium text-neutral-darkest">
-          Telefon <span className="text-red-600">*</span>
+      <div className="form-control">
+        <label htmlFor="phone" className="label">
+          <span className="label-text font-medium">Telefon <span className="text-error">*</span></span>
         </label>
         <input
           type="tel"
@@ -91,15 +91,15 @@ export default function ContactForm() {
           value={formData.phone}
           onChange={handleChange}
           required
-          className="w-full rounded-lg border border-neutral-light px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20"
+          className="input input-bordered input-lg w-full focus:input-primary"
           placeholder="0 (5XX) XXX XX XX"
         />
       </div>
 
       {/* Konu */}
-      <div>
-        <label htmlFor="subject" className="mb-2 block text-sm font-medium text-neutral-darkest">
-          Konu <span className="text-red-600">*</span>
+      <div className="form-control">
+        <label htmlFor="subject" className="label">
+          <span className="label-text font-medium">Konu <span className="text-error">*</span></span>
         </label>
         <select
           id="subject"
@@ -107,7 +107,7 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full rounded-lg border border-neutral-light px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20"
+          className="select select-bordered select-lg w-full focus:select-primary"
         >
           <option value="">Bir konu seçin</option>
           <option value="Genel Bilgi">Genel Bilgi</option>
@@ -120,9 +120,9 @@ export default function ContactForm() {
       </div>
 
       {/* Mesaj */}
-      <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-neutral-darkest">
-          Mesajınız <span className="text-red-600">*</span>
+      <div className="form-control">
+        <label htmlFor="message" className="label">
+          <span className="label-text font-medium">Mesajınız <span className="text-error">*</span></span>
         </label>
         <textarea
           id="message"
@@ -131,27 +131,29 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="w-full rounded-lg border border-neutral-light px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20"
+          className="textarea textarea-bordered textarea-lg w-full focus:textarea-primary"
           placeholder="Mesajınızı buraya yazın..."
         />
       </div>
 
       {/* KVKK Onayı */}
-      <div className="flex items-start gap-3">
-        <input
-          type="checkbox"
-          id="kvkk"
-          name="kvkk"
-          checked={formData.kvkk}
-          onChange={handleChange}
-          required
-          className="mt-1 h-4 w-4 rounded border-neutral-light text-primary focus:ring-2 focus:ring-primary/20"
-        />
-        <label htmlFor="kvkk" className="text-sm text-neutral">
-          <a href="/kvkk" className="text-primary underline hover:text-accent" target="_blank">
-            KVKK Aydınlatma Metni
-          </a>
-          'ni okudum ve kabul ediyorum. <span className="text-red-600">*</span>
+      <div className="form-control">
+        <label className="label cursor-pointer justify-start gap-3">
+          <input
+            type="checkbox"
+            id="kvkk"
+            name="kvkk"
+            checked={formData.kvkk}
+            onChange={handleChange}
+            required
+            className="checkbox checkbox-primary"
+          />
+          <span className="label-text">
+            <a href="/kvkk" className="link link-primary font-medium" target="_blank">
+              KVKK Aydınlatma Metni
+            </a>
+            'ni okudum ve kabul ediyorum. <span className="text-error">*</span>
+          </span>
         </label>
       </div>
 
@@ -159,11 +161,11 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn btn-primary w-full disabled:opacity-50"
+        className="btn btn-accent btn-lg w-full gap-2 hover:scale-105 transition-transform"
       >
         {status === "loading" ? (
           <>
-            <span className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+            <span className="loading loading-spinner loading-md"></span>
             Gönderiliyor...
           </>
         ) : (
@@ -176,16 +178,19 @@ export default function ContactForm() {
 
       {/* Success Message */}
       {status === "success" && (
-        <div className="flex items-center gap-2 rounded-lg bg-green-50 p-4 text-green-800">
-          <CheckCircle className="h-5 w-5" />
-          <p>Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.</p>
+        <div className="alert alert-success animate-fade-in">
+          <CheckCircle className="h-6 w-6" />
+          <span>Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.</span>
         </div>
       )}
 
       {/* Error Message */}
       {status === "error" && (
-        <div className="rounded-lg bg-red-50 p-4 text-red-800">
-          <p>Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>
+        <div className="alert alert-error animate-fade-in">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</span>
         </div>
       )}
     </form>

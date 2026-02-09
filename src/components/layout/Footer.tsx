@@ -38,7 +38,7 @@ export default function Footer() {
           <div>
             <div className="mb-4 flex items-center gap-2 sm:gap-3">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="ESGÜVENİR İnşaat Logo"
                 width={48}
                 height={48}

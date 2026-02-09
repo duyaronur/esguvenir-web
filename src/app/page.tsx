@@ -63,15 +63,16 @@ export default function HomePage() {
         ctaHref="/projeler"
         secondaryCtaText="İletişime Geç"
         secondaryCtaHref="/iletisim"
+        image="/images/banner.png"
       />
 
       {/* Stats Section */}
       <Stats />
 
       {/* Hizmetler */}
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-custom">
-          <div className="mb-12 text-center">
+          <div className="mb-12 text-center animate-fade-in-up">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">Hizmetlerimiz</h2>
             <p className="mx-auto max-w-2xl text-lg text-neutral">
               Konut inşaatından ticari yapılara, proje yönetiminden tadilat hizmetlerine kadar geniş
@@ -79,34 +80,38 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
+            {services.map((service, index) => (
+              <div key={service.title} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <ServiceCard {...service} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Öne Çıkan Projeler */}
-      <section className="section bg-neutral-lightest">
+      <section className="section bg-gradient-to-b from-neutral-lightest to-white">
         <div className="container-custom">
-          <div className="mb-12 flex items-end justify-between">
+          <div className="mb-12 flex items-end justify-between animate-fade-in-up">
             <div>
               <h2 className="mb-4 text-3xl font-bold md:text-4xl">Öne Çıkan Projeler</h2>
               <p className="max-w-2xl text-lg text-neutral">
                 Tekirdağ Kapaklı ve çevresinde tamamladığımız kaliteli inşaat projelerimiz.
               </p>
             </div>
-            <a href="/projeler" className="btn btn-secondary hidden lg:flex">
+            <a href="/projeler" className="btn btn-accent hidden lg:flex hover:scale-105 transition-transform">
               Tümünü Gör
             </a>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+            {featuredProjects.map((project, index) => (
+              <div key={project.slug} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
           <div className="mt-8 text-center lg:hidden">
-            <a href="/projeler" className="btn btn-secondary">
+            <a href="/projeler" className="btn btn-accent hover:scale-105 transition-transform">
               Tüm Projeleri Gör
             </a>
           </div>

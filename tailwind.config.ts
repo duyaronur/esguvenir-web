@@ -57,6 +57,24 @@ const config: Config = {
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
+    require("daisyui"),
   ],
+  daisyui: {
+    themes: [
+      {
+        esguvenir: {
+          "primary": "#00436A",
+          "secondary": "#C6A862",
+          "accent": "#C6A862",
+          "neutral": "#555555",
+          "base-100": "#FFFFFF",
+          "info": "#3ABFF8",
+          "success": "#36D399",
+          "warning": "#FBBD23",
+          "error": "#F87272",
+        },
+      },
+    ],
+  },
 };
 export default config;
