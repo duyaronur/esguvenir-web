@@ -47,10 +47,11 @@ export const SITE_CONFIG = {
 
   // Sosyal Medya (opsiyonel)
   social: {
-    facebook: "",
-    instagram: "",
+    facebook: "https://www.facebook.com/guventurutt",
+    instagram: "https://instagram.com/esguvenirinsaat",
     twitter: "",
     linkedin: "",
+    sahibinden: "https://esguvenirinsaat.sahibinden.com",
   },
 
   // SEO Keywords

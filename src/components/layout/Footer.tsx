@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Home } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/seo/constants";
 import { getTelLink, getWhatsAppLink } from "@/lib/utils/helpers";
 
@@ -80,6 +80,17 @@ export default function Footer() {
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
+                </a>
+              )}
+              {SITE_CONFIG.social.sahibinden && (
+                <a
+                  href={SITE_CONFIG.social.sahibinden}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-white/10 p-2 transition-colors hover:bg-accent"
+                  aria-label="Sahibinden.com"
+                >
+                  <Home className="h-5 w-5" />
                 </a>
               )}
             </div>
